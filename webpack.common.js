@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/entry.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -11,7 +11,6 @@ module.exports = {
      resolve: {
         extensions: ['.js', '.jsx'],
     },
-    devtool: 'source-map',
     module: {
         rules: [
           {
@@ -23,10 +22,18 @@ module.exports = {
                 presets: ['env', 'react']
               }
             }
+          },
+          {
+              test: /\.css$/,
+              exclude: [/node_modules/],
+              loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
           }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            title: "Shopster",
+            favicon: "./favicon.png"
+        })
     ]
 }
