@@ -1,11 +1,26 @@
-.navigation {
-    background-color: red;
+html {
+    font-family: 'Roboto', sans-serif;
 }
 
 .main {
-    background-color: blue;
+    background-color: rgb(154, 173, 158);
+    display: flex;
+
+    margin: 0;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    top: 0;
+    left: 15%;
+    right: 15%;
+}
+
+.navigation {
+    background-color: rgb(173, 212, 181);
+    width: 150px;
 }
 
 .shopping_list {
-    background-color: rgb(199, 167, 167);
+    flex: auto;
+    background-color: rgb(135, 171, 204);
 }

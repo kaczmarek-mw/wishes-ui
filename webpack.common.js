@@ -25,15 +25,21 @@ module.exports = {
           },
           {
               test: /\.css$/,
-              exclude: [/node_modules/],
+              exclude: /node_modules\/(?!(typeface-roboto|ANOTHER-ONE)\/).*/,
+            //   exclude: [/node_modules/],
               loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+          },
+          {
+            test: /\.(woff|woff2|eot|ttf|svg)$/,
+            loader: 'file-loader'
           }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Shopster",
-            favicon: "./favicon.png"
+            favicon: "./favicon.png",
+            template: 'index.html'
         })
     ]
 }
