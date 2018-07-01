@@ -2,25 +2,27 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-.main {
-    background-color: rgb(154, 173, 158);
+.container {
     display: flex;
-
-    margin: 0;
     position: absolute;
     width: 70%;
     height: 100%;
     top: 0;
     left: 15%;
     right: 15%;
+    
+}
+
+.main-paper-rounded {
+    border-radius: 0px;
 }
 
 .navigation {
-    background-color: rgb(173, 212, 181);
-    width: 150px;
+    width: 180px;
+    display: flex; 
 }
 
-.shopping_list {
+.main {
+    display: flex;
     flex: auto;
-    background-color: rgb(135, 171, 204);
 }
