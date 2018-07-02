@@ -5,8 +5,10 @@ import { Provider } from 'react-redux'
 import store from './store';
 import 'typeface-roboto';
 
+const root = document.createElement('div');
+document.body.appendChild(root);
+
 ReactDOM.render(
     <Provider store={store}>
         <App />
-    </Provider>, 
-document.getElementById("root"));
+    </Provider>, root);

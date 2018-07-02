@@ -35,11 +35,13 @@ module.exports = {
           }
         ]
     },
+    devServer: {
+        historyApiFallback: true
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Shopster",
-            favicon: "./favicon.png",
-            template: 'index.html'
+            favicon: "./favicon.png"
         })
     ]
 }
