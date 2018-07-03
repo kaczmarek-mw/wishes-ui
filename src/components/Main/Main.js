@@ -25,7 +25,7 @@ class Main extends React.Component {
         return (
             <div className={styles.container}>
                 <div className={styles.toolbar}>
-                    <Toolbar />
+                    <Toolbar list={list}/>
                 </div>
                 <div className={styles.shopping_list}>
                     <ShoppingList list={list} />

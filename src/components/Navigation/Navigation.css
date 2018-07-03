@@ -8,6 +8,6 @@
     
 }
 
-.active {
-    color: red;
+.active div{
+    background-color: rgb(235, 235, 235);
 }

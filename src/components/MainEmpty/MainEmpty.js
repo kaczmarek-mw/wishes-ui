@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from "./MainEmpty.css"
+import cart from './../../../img/bag250.png';
 
 class MainEmpty extends React.Component {
 
     render() {
         return (
             <div className={styles.container}>
-                Select a list!
+                <img src={cart} />
             </div>
         );
     }

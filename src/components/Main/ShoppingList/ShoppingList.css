@@ -2,3 +2,8 @@
     flex:auto;
     flex-direction: column;
 }
+
+.headline {
+    padding-top: 30px;
+    text-align: center;
+}

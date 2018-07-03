@@ -6,6 +6,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
         filename: 'bundle.js'
     },
      resolve: {
@@ -19,7 +20,7 @@ module.exports = {
             use: {
               loader: 'babel-loader',
               options: {
-                presets: ['env', 'react']
+                presets: ['stage-2', 'react']
               }
             }
           },
@@ -32,6 +33,12 @@ module.exports = {
           {
             test: /\.(woff|woff2|eot|ttf|svg)$/,
             loader: 'file-loader'
+          },
+          {
+            test: /\.(png|jpeg|ttf)$/,
+            use: [
+             { loader: 'url-loader', options: { limit: 8192 } } 
+            ]
           }
         ]
     },

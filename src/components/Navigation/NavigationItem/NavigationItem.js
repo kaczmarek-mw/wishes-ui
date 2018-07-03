@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from "./NavigationItem.css"
 import PropTypes from 'prop-types';
-import ACTIONS from './../../../store-actions';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
@@ -17,24 +16,20 @@ const materialStyles = theme => ({
 
 class NavigationItem extends React.Component {
 
-    deleteList(list) {
-        this.props.onDeleteClicked(list.id);
-    };
-
     render() {
-        const closeBtn = (this.props.isHovering ?
-            (<ListItemSecondaryAction>
-                <IconButton aria-label="Close" onClick={() => this.deleteList(this.props.list)}>
-                    <ClearIcon />
-                </IconButton>
-            </ListItemSecondaryAction>) :
-            <div></div>
-        );
+        // const closeBtn = (this.props.isHovering ?
+        //     (<ListItemSecondaryAction>
+        //         <IconButton aria-label="Close">
+        //             <ClearIcon />
+        //         </IconButton>
+        //     </ListItemSecondaryAction>) :
+        //     <div></div>
+        // );
 
         return (
             <ListItem button className={styles.container}>
                 <ListItemText primary={this.props.list.name} />
-                {closeBtn}
+                {/* {closeBtn} */}
             </ListItem>
 
         );
@@ -56,10 +51,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onDeleteClicked: (id) => dispatch({
-            type: ACTIONS.DELETE_LIST,
-            payload: id
-        })
+
     }
 }
 

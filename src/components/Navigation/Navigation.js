@@ -21,10 +21,13 @@ class Navigation extends React.Component {
             <div className={styles.container}>
                 <List>
                     {this.props.lists.map(list => (
-                        <NavLink key={list.id} to={'/list/' + list.id} activeClassName={styles.active}>
-                            <ReactHoverObserver>
-                                <NavigationItem list={list} />
-                            </ReactHoverObserver>
+                        <NavLink 
+                            key={list.id} to={'/list/' + list.id} 
+                            activeClassName={styles.active}
+                            style={{ textDecoration: 'none' }}>
+                            {/* <ReactHoverObserver> */}
+                                <NavigationItem key={list.id}list={list} />
+                            {/* </ReactHoverObserver> */}
                         </NavLink>
                     ))}
                 </List>
@@ -51,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default  withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps) (Navigation));
+export default  withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps, null, {pure: false}) (Navigation));
