@@ -6,27 +6,27 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ReactHoverObserver from 'react-hover-observer';
 
 const materialStyles = theme => ({
-    
+
 });
 
 class Navigation extends React.Component {
 
-   
+
     render() {
         return (
             <div className={styles.container}>
                 <List>
                     {this.props.lists.map(list => (
-                        <NavLink 
-                            key={list.id} to={'/list/' + list.id} 
+                        <NavLink
+                            key={list.id} to={'/list/' + list.id}
                             activeClassName={styles.active}
                             style={{ textDecoration: 'none' }}>
                             {/* <ReactHoverObserver> */}
-                                <NavigationItem key={list.id}list={list} />
+                            <NavigationItem key={list.id} list={list} />
                             {/* </ReactHoverObserver> */}
                         </NavLink>
                     ))}
@@ -34,7 +34,7 @@ class Navigation extends React.Component {
             </div>
         );
     }
-    
+
 }
 
 Navigation.propTypes = {
@@ -49,9 +49,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      
+
     }
 }
 
 
-export default  withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps, null, {pure: false}) (Navigation));
+export default withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Navigation));

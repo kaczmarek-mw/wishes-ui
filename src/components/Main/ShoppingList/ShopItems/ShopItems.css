@@ -1,0 +1,10 @@
+.container {
+    flex:none;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.shop_heading h3 {
+    color: red;
+}
+

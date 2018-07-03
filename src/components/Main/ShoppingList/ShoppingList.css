@@ -1,9 +1,10 @@
 .container {
+    display: flex;
     flex:auto;
     flex-direction: column;
 }
 
 .headline {
-    padding-top: 30px;
+    padding: 10px;
     text-align: center;
 }

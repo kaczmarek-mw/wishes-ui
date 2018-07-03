@@ -64,7 +64,7 @@ class Toolbar_ extends React.Component {
                         "aria-label": "Description"
                     }}
                 />
-                <IconButton 
+                <IconButton
                     aria-label="More"
                     aria-owns={anchorEl ? 'shopping-toolbar-menu' : null}
                     aria-haspopup="true"
@@ -76,10 +76,10 @@ class Toolbar_ extends React.Component {
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     onClose={this.handleMenuClose}
-                    >
+                >
                     <MenuItem onClick={() => this.deleteList(this.props.list)}>
                         <DeleteIcon />
-                        <p style={{'marginLeft': '10px'}}>Delete this list</p>
+                        <p style={{ 'marginLeft': '10px' }}>Delete this list</p>
                     </MenuItem>
                 </Menu>
             </Toolbar>
