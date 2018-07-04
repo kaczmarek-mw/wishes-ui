@@ -7,14 +7,26 @@ import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
-import ClearIcon from '@material-ui/icons/Clear';
+import CheckIcon from '@material-ui/icons/Check';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
 const materialStyles = theme => ({
-
+    listItemTextRoot: {
+        padding: '0 5px'
+    },
+    ListItemRoot: {
+        padding: '10px 5px 10px 10px'
+    },
+    iconDone: {
+        color: 'green'
+    }
 });
 
 class NavigationItem extends React.Component {
+
+    countDone = (items) => {
+        return items.filter(item => { return item.done }).length;
+    }
 
     render() {
         // const closeBtn = (this.props.isHovering ?
@@ -26,10 +38,19 @@ class NavigationItem extends React.Component {
         //     <div></div>
         // );
 
+        const {list, classes} = this.props;
+        const isDone = this.countDone(list.items) == list.items.length && list.items.length > 0;
+
         return (
-            <ListItem button className={styles.container}>
-                <ListItemText primary={this.props.list.name} />
-                {/* {closeBtn} */}
+            <ListItem button classes={{root: classes.ListItemRoot}}>
+                
+                <ListItemText 
+                classes={{root: classes.listItemTextRoot}}
+                primary={list.name} />
+                {(isDone) ? 
+                    <CheckIcon 
+                    classes={{root: classes.iconDone}}
+                    />: null}
             </ListItem>
 
         );

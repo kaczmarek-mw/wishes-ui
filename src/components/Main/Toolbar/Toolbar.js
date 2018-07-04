@@ -61,7 +61,7 @@ class Toolbar_ extends React.Component {
                         input: this.props.classes.input
                     }}
                     inputProps={{
-                        "aria-label": "Description"
+                        "aria-label": "Search field"
                     }}
                 />
                 <IconButton

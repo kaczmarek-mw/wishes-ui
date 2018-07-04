@@ -4,6 +4,7 @@ import styles from "./ShoppingList.css"
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import ShopItems from './ShopItems/ShopItems';
+import NewItemInput from './NewItemInput/NewItemInput';
 import Divider from '@material-ui/core/Divider';
 
 class ShoppingList extends React.Component {
@@ -26,6 +27,7 @@ class ShoppingList extends React.Component {
                     {list.name}
                 </Typography>
                 <Divider />
+                <NewItemInput list={list}></NewItemInput>
                 {Object.keys(grouped).map(shop => (
                     <ShopItems key={shop} list={list} shop={shop} items={grouped[shop]} />
                 ))}

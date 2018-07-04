@@ -28,6 +28,9 @@ const materialStyles = theme => ({
     },
     listRoot: {
         width: '100%'
+    },
+    typographyRoot:{
+        
     }
 });
 
@@ -54,6 +57,7 @@ class ShopItems extends React.Component {
     render() {
         const { expanded } = this.state;
         const { list, shop, items, classes } = this.props;
+        const countItemsDone = this.countDone(items);
         return (
             <div className={styles.container}>
                 <ExpansionPanel expanded={expanded} onChange={this.toggleExpanded()}>
@@ -63,9 +67,14 @@ class ShopItems extends React.Component {
                             expanded: classes.summaryExpanded
                         }}
                         expandIcon={<ExpandMoreIcon />}>
-                        <Divider></Divider>
-                        <Typography variant='subheading'>{shop} ({this.countDone(items)}/{items.length})</Typography>
+                        <Typography 
+                            classes={{
+                                root: classes.typographyRoot
+                            }} 
+                            style={{'color': ((countItemsDone == items.length) ? 'gray' : '')}}
+                            variant='subheading'>{shop} ({countItemsDone}/{items.length})</Typography>
                     </ExpansionPanelSummary>
+                    <Divider></Divider>
                     <ExpansionPanelDetails>
                         <List
                             classes={{

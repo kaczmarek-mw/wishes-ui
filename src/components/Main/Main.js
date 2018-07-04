@@ -20,7 +20,6 @@ class Main extends React.Component {
     }
 
     render() {
-        console.log(`Render props id is ${this.props.match.params.id}`);
         const list = this.getCurrentList();
         return (
             <div className={styles.container}>
