@@ -4,6 +4,13 @@
     flex-direction: column;
 }
 
+.scrollContainer {
+    overflow: auto;
+    display: flex;
+    flex:auto;
+    flex-direction: column;
+}
+
 .headline {
     padding: 10px;
     text-align: center;

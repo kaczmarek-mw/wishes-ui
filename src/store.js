@@ -54,6 +54,13 @@ const defaultStore = {
     ]
 }
 
+var newId = function () {
+    // Math.random should be unique because of its seeding algorithm.
+    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+    // after the decimal.
+    return '_' + Math.random().toString(36).substr(2, 9);
+  };
+
 const shopsterReducer = (state = defaultStore, action) => {
     switch (action.type) {
         case ACTIONS.DELETE_LIST:
@@ -82,6 +89,21 @@ const shopsterReducer = (state = defaultStore, action) => {
                     }
                 })
             }
+        case ACTIONS.NEW_SHOPPING_ITEM:
+        return {
+            lists: state.lists.map(list => {
+                if (list.id == action.payload.list.id) {
+                    let item = action.payload.item;
+                    item.id = newId();
+                    return {
+                        ...list,
+                        items: list.items.concat([item])
+                    };
+                } else {
+                    return list;
+                }
+            })
+        }
         default:
             {
                 return state;

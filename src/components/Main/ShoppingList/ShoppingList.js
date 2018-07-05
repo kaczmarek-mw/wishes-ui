@@ -26,11 +26,13 @@ class ShoppingList extends React.Component {
                 <Typography className={styles.headline} variant="headline">
                     {list.name}
                 </Typography>
-                <Divider />
                 <NewItemInput list={list}></NewItemInput>
-                {Object.keys(grouped).map(shop => (
-                    <ShopItems key={shop} list={list} shop={shop} items={grouped[shop]} />
-                ))}
+                <Divider />
+                <div className={styles.scrollContainer}>
+                    {Object.keys(grouped).map(shop => (
+                        <ShopItems key={shop} list={list} shop={shop} items={grouped[shop]} />
+                    ))}
+                </div>
             </div>
         );
     }
