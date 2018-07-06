@@ -16,7 +16,6 @@ class ShoppingList extends React.Component {
         }, {});
     };
 
-
     render() {
         const list = this.props.list;
         const grouped = this.groupBy(list.items, 'shop');

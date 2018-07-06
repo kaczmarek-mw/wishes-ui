@@ -4,17 +4,11 @@ import styles from "./Navigation.css"
 import NavigationItem from "./NavigationItem/NavigationItem"
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import { NavLink } from 'react-router-dom';
 import ReactHoverObserver from 'react-hover-observer';
 
-const materialStyles = theme => ({
-
-});
-
 class Navigation extends React.Component {
-
 
     render() {
         return (
@@ -49,9 +43,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        // Nothing for the moment
     }
 }
 
-
-export default withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Navigation));
+export default connect(mapStateToProps, mapDispatchToProps, null, { pure: false })(Navigation);

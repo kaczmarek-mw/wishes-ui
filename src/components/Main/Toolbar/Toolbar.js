@@ -94,7 +94,7 @@ Toolbar_.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-
+        // Nothing for the moment
     }
 }
 
@@ -106,6 +106,5 @@ const mapDispatchToProps = (dispatch) => {
         })
     }
 }
-
 
 export default withStyles(materialStyles)(connect(mapStateToProps, mapDispatchToProps)(withRouter(Toolbar_)));

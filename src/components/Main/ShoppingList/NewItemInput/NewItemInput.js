@@ -94,7 +94,7 @@ NewItemInput.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-
+        // Nothing for the moment
     }
 }
 
