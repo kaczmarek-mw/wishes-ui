@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  flex: none;
+}
+
+.shopping_list {
+  display: flex;
+  flex: auto;
+}
+
+.scrollContainer {
+  overflow: auto;
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+}
