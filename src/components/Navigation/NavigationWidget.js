@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import styles from "./Navigation.css";
+import styles from "./NavigationWidget.css";
 import NavigationItem from "./NavigationItem";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -8,7 +8,7 @@ import List from "@material-ui/core/List";
 import { NavLink } from "react-router-dom";
 import ReactHoverObserver from "react-hover-observer";
 
-class Navigation extends React.Component {
+class NavigationWidget extends React.Component {
   render() {
     return (
       <div className={styles.container}>
@@ -31,7 +31,7 @@ class Navigation extends React.Component {
   }
 }
 
-Navigation.propTypes = {
+NavigationWidget.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
@@ -52,4 +52,4 @@ export default connect(
   mapDispatchToProps,
   null,
   { pure: false }
-)(Navigation);
+)(NavigationWidget);
