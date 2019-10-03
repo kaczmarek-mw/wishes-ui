@@ -32,7 +32,7 @@ const materialStyles = theme => ({
   typographyRoot: {}
 });
 
-class ShopItems extends React.Component {
+class Wishes extends React.Component {
   state = {
     expanded: true
   };
@@ -109,7 +109,7 @@ class ShopItems extends React.Component {
   }
 }
 
-ShopItems.propTypes = {
+Wishes.propTypes = {
   shop: PropTypes.string.isRequired,
   items: PropTypes.array.isRequired,
   list: PropTypes.object.isRequired
@@ -135,5 +135,5 @@ export default withStyles(materialStyles)(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(ShopItems)
+  )(Wishes)
 );

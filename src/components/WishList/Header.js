@@ -28,7 +28,7 @@ const materialStyles = theme => ({
   }
 });
 
-class Toolbar_ extends React.Component {
+class Header extends React.Component {
   state = {
     anchorEl: null
   };
@@ -84,7 +84,7 @@ class Toolbar_ extends React.Component {
   }
 }
 
-Toolbar_.propTypes = {
+Header.propTypes = {
   classes: PropTypes.object.isRequired,
   list: PropTypes.object.isRequired
 };
@@ -109,5 +109,5 @@ export default withStyles(materialStyles)(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(withRouter(Toolbar_))
+  )(withRouter(Header))
 );

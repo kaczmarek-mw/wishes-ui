@@ -36,7 +36,7 @@ const materialStyles = theme => ({
   }
 });
 
-class NewItemInput extends React.Component {
+class NewWish extends React.Component {
   state = {
     name: "",
     quantity: 1,
@@ -125,7 +125,7 @@ class NewItemInput extends React.Component {
   }
 }
 
-NewItemInput.propTypes = {
+NewWish.propTypes = {
   list: PropTypes.object
 };
 
@@ -149,5 +149,5 @@ export default withStyles(materialStyles)(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(NewItemInput)
+  )(NewWish)
 );

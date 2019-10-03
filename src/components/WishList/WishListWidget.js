@@ -8,7 +8,7 @@ import NewWish from "./NewWish";
 import Divider from "@material-ui/core/Divider";
 import { connect } from "react-redux";
 
-class Main extends React.Component {
+class WishListWidget extends React.Component {
   constructor(props) {
     super(props);
     this.state = { list: {} };
@@ -79,4 +79,4 @@ const mapDispatchToProps = (dispatch, state) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Main);
+)(WishListWidget);
