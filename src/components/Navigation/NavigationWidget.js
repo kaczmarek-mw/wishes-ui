@@ -1,19 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import styles from "./NavigationWidget.css";
 import NavigationItem from "./NavigationItem";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import List from "@material-ui/core/List";
 import { NavLink } from "react-router-dom";
-import ReactHoverObserver from "react-hover-observer";
 
 class NavigationWidget extends React.Component {
   render() {
+    const { lists } = this.props;
+    if (!lists) {
+      return null;
+    }
     return (
       <div className={styles.container}>
         <List>
-          {this.props.lists.map(list => (
+          {lists.map(list => (
             <NavLink
               key={list.id}
               to={"/list/" + list.id}
@@ -32,24 +33,7 @@ class NavigationWidget extends React.Component {
 }
 
 NavigationWidget.propTypes = {
-  classes: PropTypes.object.isRequired
+  lists: PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    lists: state.lists
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    // Nothing for the moment
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-  null,
-  { pure: false }
-)(NavigationWidget);
+export default NavigationWidget;

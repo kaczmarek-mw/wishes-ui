@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import styles from "./Wishes.css";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -15,8 +14,6 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import Avatar from "@material-ui/core/Avatar";
-import ACTIONS from "../../store-actions";
-import { connect } from "react-redux";
 
 const materialStyles = theme => ({
   summaryRoot: {
@@ -115,25 +112,4 @@ Wishes.propTypes = {
   list: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => {
-  return {
-    // Nothing for the moment
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleDone: (list, item) =>
-      dispatch({
-        type: ACTIONS.TOGGLE_DONE,
-        payload: { list, item }
-      })
-  };
-};
-
-export default withStyles(materialStyles)(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Wishes)
-);
+export default withStyles(materialStyles)(Wishes);

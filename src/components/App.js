@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import styles from "./App.css";
-import NavigationWidget from "./Navigation/NavigationWidget";
-import WishListWidget from "./WishList/WishListWidget";
+import Navigation from "./Navigation";
+import WishList from "./WishList";
 import EmptyWidget from "./Empty/EmptyWidget";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
@@ -15,12 +15,12 @@ class App extends React.Component {
         <Paper className={styles.container}>
           <CssBaseline />
           <div className={styles.navigation}>
-            <NavigationWidget />
+            <Navigation />
           </div>
           <div className={styles.main}>
             <Switch>
               <Route exact path="/" component={EmptyWidget} />
-              <Route exact path="/list/:id" component={WishListWidget} />
+              <Route exact path="/list/:id" component={WishList} />
             </Switch>
           </div>
         </Paper>

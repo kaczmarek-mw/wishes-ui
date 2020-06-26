@@ -1,12 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import styles from "./WishListWidget.css";
 import Header from "./Header";
-import Paper from "@material-ui/core/Paper";
-import ShopItems from "./Wishes";
+import Wishes from "./Wishes";
 import NewWish from "./NewWish";
 import Divider from "@material-ui/core/Divider";
-import { connect } from "react-redux";
 
 class WishListWidget extends React.Component {
   constructor(props) {
@@ -32,6 +29,7 @@ class WishListWidget extends React.Component {
 
   renderWishes(list) {
     const grouped = this.groupBy(list.items, "shop");
+    const { toggleDone } = this.props;
     return (
       <div className={styles.container}>
         <Divider />
@@ -39,7 +37,8 @@ class WishListWidget extends React.Component {
         <Divider />
         <div className={styles.scrollContainer}>
           {Object.keys(grouped).map(shop => (
-            <ShopItems
+            <Wishes
+              toggleDone={toggleDone}
               key={shop}
               list={list}
               shop={shop}
@@ -64,19 +63,4 @@ class WishListWidget extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    lists: state.lists
-  };
-};
-
-const mapDispatchToProps = (dispatch, state) => {
-  return {
-    // Nothing for the moment
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WishListWidget);
+export default WishListWidget;
