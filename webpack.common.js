@@ -47,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Shopster",
+            title: "Wishes",
             favicon: "./favicon.png"
         })
     ]
